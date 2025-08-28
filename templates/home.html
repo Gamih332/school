@@ -1,0 +1,110 @@
+{% load static %}
+{% include 'header.html' %}
+
+<main>
+  <!-- أنماط الصفحة الرئيسية -->
+  <style>
+    main {
+      font-family: "Cairo", sans-serif;
+      padding: 40px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #d9eaf7, #f2f6fc);
+      padding: 60px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #2b3d63;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      background: #2b3d63;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #1f2a45;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #fafbfd;
+      border: 1px solid #e1e5ee;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #2b3d63;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+
+  <!-- القسم التعريفي -->
+  <section class="hero">
+    <h1>مرحباً بكم في متجر المعلم</h1>
+    <p>احصل على ملفات إنجاز، شهادات، أوراق عمل وأفكار تعليمية قابلة للطباعة بسهولة.</p>
+    <button>استكشف الآن</button>
+  </section>
+
+  <!-- عرض المميزات -->
+  <section class="features">
+    <div class="card">
+      <h3>📂 ملفات الإنجاز</h3>
+      <p>قوالب جاهزة لعرض إنجازاتك التعليمية بطريقة احترافية.</p>
+    </div>
+    <div class="card">
+      <h3>🏅 شهادات</h3>
+      <p>تصاميم شهادات تقدير مميزة للطلاب والطالبات.</p>
+    </div>
+    <div class="card">
+      <h3>📝 أوراق عمل</h3>
+      <p>تمارين وأنشطة تعليمية قابلة للطباعة.</p>
+    </div>
+    <div class="card">
+      <h3>💡 أفكار تعليمية</h3>
+      <p>ابتكارات ونصائح لإثراء العملية التعليمية.</p>
+    </div>
+  </section>
+</main>
+
+{% include 'footer.html' %}
