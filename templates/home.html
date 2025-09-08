@@ -8,113 +8,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>متجر المعلم</title>
 
-  <!-- خط Cairo من Google Fonts -->
+  <!-- خط Cairo -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
 
-<main>
-  <!-- أنماط الصفحة الرئيسية -->
   <style>
-    main {
+    body {
       font-family: "Cairo", sans-serif;
-      padding: 40px 20px;
-      background: #ffffff;
-      text-align: center;
+      margin: 0;
+      background: #f9fbfd;
+      color: #2b3d63;
     }
 
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* عنوان رئيسي */
     .hero {
-      background: linear-gradient(135deg, #d9eaf7, #f2f6fc);
-      padding: 60px 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 40px;
+      text-align: center;
+      margin-bottom: 50px;
     }
 
     .hero h1 {
-      font-size: 32px;
+      font-size: 38px;
+      font-weight: 700;
       color: #2b3d63;
       margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 18px;
-      color: #444;
-      margin-bottom: 20px;
+      color: #555;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .hero button {
-      background: #2b3d63;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .hero button:hover {
-      background: #1f2a45;
-    }
-
+    /* شبكة المميزات */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      justify-items: center;
     }
 
     .card {
-      background: #fafbfd;
+      background: #ffffff;
       border: 1px solid #e1e5ee;
-      border-radius: 10px;
-      padding: 20px;
+      border-radius: 12px;
+      padding: 25px;
       text-align: center;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     }
 
     .card h3 {
-      font-size: 18px;
+      font-size: 20px;
+      margin-bottom: 12px;
       color: #2b3d63;
-      margin-bottom: 10px;
     }
 
     .card p {
-      font-size: 14px;
+      font-size: 15px;
       color: #555;
+      line-height: 1.6;
+    }
+
+    /* استجابة للجوال */
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+      .card h3 {
+        font-size: 18px;
+      }
+      .card p {
+        font-size: 14px;
+      }
     }
   </style>
+</head>
+<body>
 
+<main>
   <!-- القسم التعريفي -->
   <section class="hero">
     <h1>مرحباً بكم في متجر المعلم</h1>
-    <p>احصل على ملفات إنجاز، شهادات، أوراق عمل وأفكار تعليمية قابلة للطباعة بسهولة.</p>
-    <button>استكشف الآن</button>
+    <p>احصل على ملفات إنجاز، شهادات، أوراق عمل وأفكار تعليمية جاهزة للطباعة بسهولة وجودة عالية.</p>
   </section>
 
   <!-- عرض المميزات -->
   <section class="features">
     <div class="card">
       <h3>📂 ملفات الإنجاز</h3>
-      <p>قوالب جاهزة لعرض إنجازاتك التعليمية بطريقة احترافية.</p>
+      <p>قوالب احترافية جاهزة لعرض إنجازاتك التعليمية بأسلوب مميز ومنظم.</p>
     </div>
     <div class="card">
       <h3>🏅 شهادات</h3>
-      <p>تصاميم شهادات تقدير مميزة للطلاب والطالبات.</p>
+      <p>مجموعة شهادات تقدير أنيقة قابلة للتعديل والطباعة للطلاب والطالبات.</p>
     </div>
     <div class="card">
       <h3>📝 أوراق عمل</h3>
-      <p>تمارين وأنشطة تعليمية قابلة للطباعة.</p>
+      <p>أنشطة وتمارين تعليمية متنوعة تناسب مختلف المراحل الدراسية.</p>
     </div>
     <div class="card">
       <h3>💡 أفكار تعليمية</h3>
-      <p>ابتكارات ونصائح لإثراء العملية التعليمية.</p>
+      <p>أفكار مبتكرة لإثراء الدروس وتشجيع الإبداع لدى الطلاب.</p>
     </div>
   </section>
 </main>

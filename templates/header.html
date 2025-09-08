@@ -1,37 +1,52 @@
 <header dir="rtl">
-  <!-- أنماط الهيدر -->
   <style>
     header {
-      background: #f5f7fb;
-      border-bottom: 2px solid #e1e5ee;
+      background: linear-gradient(135deg, #2b3d63, #5a6e9e, #d9eaf7);
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: "Cairo", sans-serif;
+      color: #fff;
+      flex-wrap: wrap;
     }
 
     header .logo {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
-      color: #2b3d63;
+      color: #fff;
     }
 
     header nav {
       display: flex;
-      gap: 15px;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 8px;
     }
 
     header nav a {
       text-decoration: none;
-      color: #444;
+      color: #fff;
       font-size: 16px;
+      font-weight: 500;
       transition: 0.3s;
     }
 
     header nav a:hover {
-      color: #2b3d63;
-      font-weight: 600;
+      color: #d9eaf7;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      header nav {
+        justify-content: flex-start;
+      }
     }
   </style>
 
