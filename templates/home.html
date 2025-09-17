@@ -62,18 +62,21 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       overflow: hidden;
       width: 100%;
-      max-width: 520px;
+      max-width: 500px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.25);
       backdrop-filter: blur(12px);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      text-decoration: none; /* إزالة الخط من الروابط */
+      color: inherit;
     }
 
     .card:hover {
-      transform: translateY(-12px) scale(1.02);
+      transform: translateY(-10px) scale(1.02);
       box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
 
@@ -86,13 +89,12 @@
     }
 
     .card-content {
-      padding: 25px;
-      text-align: center;
+      padding: 20px;
     }
 
     .card h3 {
       font-size: 26px;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
       font-weight: 700;
       background: linear-gradient(90deg, #00c6ff, #4caf50);
       -webkit-background-clip: text;
@@ -101,7 +103,7 @@
 
     .card p {
       font-size: 17px;
-      color: #e0e0e0;
+      color: #f9f9f9;
       line-height: 1.7;
     }
 
@@ -133,37 +135,37 @@
 
   <!-- عرض المميزات -->
   <section class="features">
-    <div class="card">
+    <a href="/portfolio/" class="card">
       <img src="{% static 'images/ملف.jpg' %}" alt="ملفات الإنجاز">
       <div class="card-content">
         <h3>📂 ملفات الإنجاز</h3>
         <p>قوالب احترافية جاهزة لعرض إنجازاتك التعليمية بأسلوب مميز ومنظم.</p>
       </div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/certificates/" class="card">
       <img src="{% static 'images/الشهادات.jpeg' %}" alt="الشهادات">
       <div class="card-content">
         <h3>🏅 شهادات</h3>
         <p>مجموعة شهادات تقدير أنيقة قابلة للتعديل والطباعة للطلاب والطالبات.</p>
       </div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/worksheets/" class="card">
       <img src="{% static 'images/ورقة عمل.jpeg' %}" alt="أوراق العمل">
       <div class="card-content">
         <h3>📝 أوراق عمل</h3>
         <p>أنشطة وتمارين تعليمية متنوعة تناسب مختلف المراحل الدراسية.</p>
       </div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="/ideas/" class="card">
       <img src="{% static 'images/افكار.jpeg' %}" alt="أفكار تعليمية">
       <div class="card-content">
         <h3>💡 أفكار تعليمية</h3>
         <p>أفكار مبتكرة لإثراء الدروس وتشجيع الإبداع لدى الطلاب.</p>
       </div>
-    </div>
+    </a>
   </section>
 </main>
 

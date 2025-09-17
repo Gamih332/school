@@ -13,6 +13,13 @@ def home(request):
     return render(request, "home.html", context)
 
 
+def portfolio_view(request):
+    """
+    صفحة العرض التجريبي للمحفظة أو المشاريع
+    """
+    return HttpResponse("صفحة Portfolio (تحت الإنشاء)")
+
+
 def product_list(request):
     """
     قائمة المنتجات (placeholder مؤقت)
@@ -39,3 +46,10 @@ def checkout(request):
     صفحة الدفع (placeholder مؤقت)
     """
     return HttpResponse("صفحة الدفع (تحت الإنشاء)")
+
+
+def certificates_view(request):
+    """
+    صفحة الشهادات (placeholder مؤقت)
+    """
+    return HttpResponse("صفحة الشهادات (تحت الإنشاء)")
