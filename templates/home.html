@@ -15,81 +15,94 @@
     body {
       font-family: "Cairo", sans-serif;
       margin: 0;
-      background: #f9fbfd;
-      color: #2b3d63;
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #4caf50);
+      color: #fff;
     }
 
     main {
-      padding: 40px 20px;
-      max-width: 1000px;
+      padding: 50px 20px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    /* عنوان رئيسي */
+    /* نص بتدرج ألوان */
+    .gradient-text {
+      background: linear-gradient(90deg, #00c6ff, #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* القسم التعريفي */
     .hero {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
 
     .hero h1 {
-      font-size: 38px;
-      font-weight: 700;
-      color: #2b3d63;
-      margin-bottom: 15px;
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #555;
-      line-height: 1.7;
-      max-width: 700px;
+      font-size: 20px;
+      color: #f0f0f0;
+      line-height: 1.8;
+      max-width: 800px;
       margin: auto;
     }
 
-    /* شبكة المميزات */
+    /* شبكة الكروت */
     .features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 40px;
       justify-items: center;
     }
 
     .card {
-      background: #ffffff;
-      border: 1px solid #e1e5ee;
-      border-radius: 12px;
-      padding: 25px;
-      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
       width: 100%;
-      max-width: 450px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: 0.3s;
+      max-width: 520px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
 
     .card img {
-      width: 70px;
-      height: 70px;
+      width: 100%;
+      height: 280px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 2px solid #e1e5ee;
+      display: block;
+      border: none; /* بدون إطار */
+    }
+
+    .card-content {
+      padding: 25px;
+      text-align: center;
     }
 
     .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #2b3d63;
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00c6ff, #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .card p {
-      font-size: 15px;
-      color: #555;
-      line-height: 1.6;
+      font-size: 17px;
+      color: #e0e0e0;
+      line-height: 1.7;
     }
 
     /* استجابة للجوال */
@@ -98,16 +111,13 @@
         grid-template-columns: 1fr;
       }
       .hero h1 {
-        font-size: 28px;
+        font-size: 32px;
       }
       .hero p {
-        font-size: 16px;
-      }
-      .card h3 {
         font-size: 18px;
       }
-      .card p {
-        font-size: 14px;
+      .card img {
+        height: 200px;
       }
     }
   </style>
@@ -117,7 +127,7 @@
 <main>
   <!-- القسم التعريفي -->
   <section class="hero">
-    <h1>مرحباً بكم في متجر المعلم</h1>
+    <h1 class="gradient-text">مرحباً بكم في متجر المعلم</h1>
     <p>احصل على ملفات إنجاز، شهادات، أوراق عمل وأفكار تعليمية جاهزة للطباعة بسهولة وجودة عالية.</p>
   </section>
 
@@ -125,23 +135,34 @@
   <section class="features">
     <div class="card">
       <img src="{% static 'images/ملف.jpg' %}" alt="ملفات الإنجاز">
-      <h3>📂 ملفات الإنجاز</h3>
-      <p>قوالب احترافية جاهزة لعرض إنجازاتك التعليمية بأسلوب مميز ومنظم.</p>
+      <div class="card-content">
+        <h3>📂 ملفات الإنجاز</h3>
+        <p>قوالب احترافية جاهزة لعرض إنجازاتك التعليمية بأسلوب مميز ومنظم.</p>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'images/الشهادات.jpeg' %}" alt="الشهادات">
-      <h3>🏅 شهادات</h3>
-      <p>مجموعة شهادات تقدير أنيقة قابلة للتعديل والطباعة للطلاب والطالبات.</p>
+      <div class="card-content">
+        <h3>🏅 شهادات</h3>
+        <p>مجموعة شهادات تقدير أنيقة قابلة للتعديل والطباعة للطلاب والطالبات.</p>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'images/ورقة عمل.jpeg' %}" alt="أوراق العمل">
-      <h3>📝 أوراق عمل</h3>
-      <p>أنشطة وتمارين تعليمية متنوعة تناسب مختلف المراحل الدراسية.</p>
+      <div class="card-content">
+        <h3>📝 أوراق عمل</h3>
+        <p>أنشطة وتمارين تعليمية متنوعة تناسب مختلف المراحل الدراسية.</p>
+      </div>
     </div>
+
     <div class="card">
       <img src="{% static 'images/افكار.jpeg' %}" alt="أفكار تعليمية">
-      <h3>💡 أفكار تعليمية</h3>
-      <p>أفكار مبتكرة لإثراء الدروس وتشجيع الإبداع لدى الطلاب.</p>
+      <div class="card-content">
+        <h3>💡 أفكار تعليمية</h3>
+        <p>أفكار مبتكرة لإثراء الدروس وتشجيع الإبداع لدى الطلاب.</p>
+      </div>
     </div>
   </section>
 </main>
