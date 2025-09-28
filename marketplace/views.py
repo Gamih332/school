@@ -8,6 +8,7 @@ def home(request):
     """
     context = {
         "page_title": "الرئيسية - متجر المعلمين",
+        "page_type": "home",
         "welcome_message": "مرحبًا بكم في متجر المعلمين - ملفات إنجاز، شهادات، أفكار تعليمية، وأوراق عمل جاهزة للطباعة.",
     }
     return render(request, "home.html", context)
@@ -17,39 +18,69 @@ def portfolio_view(request):
     """
     صفحة العرض التجريبي للمحفظة أو المشاريع
     """
-    return HttpResponse("صفحة Portfolio (تحت الإنشاء)")
+    context = {
+        "page_title": "البورتفوليو - متجر المعلمين",
+        "page_type": "portfolio",
+        "welcome_message": "استعرض مجموعة من الأعمال والملفات التعليمية المميزة.",
+    }
+    return render(request, "home.html", context)
 
 
 def product_list(request):
     """
-    قائمة المنتجات (placeholder مؤقت)
+    قائمة المنتجات
     """
-    return HttpResponse("صفحة قائمة المنتجات (تحت الإنشاء)")
+    context = {
+        "page_title": "المنتجات - متجر المعلمين",
+        "page_type": "products",
+        "welcome_message": "تصفح جميع منتجاتنا التعليمية المميزة.",
+    }
+    return render(request, "home.html", context)
 
 
 def product_detail(request, pk):
     """
-    تفاصيل المنتج (placeholder مؤقت)
+    تفاصيل المنتج
     """
-    return HttpResponse(f"تفاصيل المنتج رقم {pk} (تحت الإنشاء)")
+    context = {
+        "page_title": f"تفاصيل المنتج {pk} - متجر المعلمين",
+        "page_type": "product_detail",
+        "welcome_message": f"تفاصيل المنتج رقم {pk} (قريباً).",
+    }
+    return render(request, "home.html", context)
 
 
 def cart_view(request):
     """
-    سلة المشتريات (placeholder مؤقت)
+    سلة المشتريات
     """
-    return HttpResponse("سلة المشتريات (تحت الإنشاء)")
+    context = {
+        "page_title": "سلة المشتريات - متجر المعلمين",
+        "page_type": "cart",
+        "welcome_message": "هذه سلة المشتريات الخاصة بك.",
+    }
+    return render(request, "home.html", context)
 
 
 def checkout(request):
     """
-    صفحة الدفع (placeholder مؤقت)
+    صفحة الدفع
     """
-    return HttpResponse("صفحة الدفع (تحت الإنشاء)")
+    context = {
+        "page_title": "الدفع - متجر المعلمين",
+        "page_type": "checkout",
+        "welcome_message": "أكمل عملية الدفع بأمان وسهولة.",
+    }
+    return render(request, "home.html", context)
 
 
 def certificates_view(request):
     """
-    صفحة الشهادات (placeholder مؤقت)
+    صفحة الشهادات
     """
-    return HttpResponse("صفحة الشهادات (تحت الإنشاء)")
+    context = {
+        "page_title": "الشهادات - متجر المعلمين",
+        "page_type": "certificates",
+        "welcome_message": "مجموعة شهادات تقدير جاهزة للتعديل والطباعة.",
+    }
+    return render(request, "home.html", context)
